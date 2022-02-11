@@ -124,6 +124,12 @@ p {
   box-shadow: 0 0 4px -2px var(--clr-grey-3);
 }
 
+.fixed-container {
+  max-width: var(--max-width);
+  width: 95%;
+  margin: auto;
+}
+
 .navbar-center {
   display: flex;
   justify-content: space-between;
@@ -131,8 +137,19 @@ p {
   width: 95%;
   max-width: var(--max-width);
   margin: auto;
+  padding: 0.35rem;
+}
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 
+.logo span {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
 .logo img {
   width: 50px;
   height: 50px;
@@ -140,13 +157,19 @@ p {
 
 .navbar ul {
   display: none;
-  gap: 3rem;
+  gap: max(3rem, 4vw);
 }
 .navbar li {
   font-size: 1.3rem;
   font-weight: 500;
   letter-spacing: -0.05rem;
   position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.navbar .fa-icons {
+  margin-right: 0.3rem;
 }
 .navbar li:after {
   content: "";
@@ -169,12 +192,78 @@ p {
 
 .fa-bars {
 }
-@media screen and (min-width: 800px) {
+@media screen and (min-width: 600px) {
   .navbar ul {
     display: flex;
   }
 
   .fa-bars {
     display: none;
+  }
+}
+
+/* ------------------main------------------------ */
+
+.search-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  /* background-color: green; */
+}
+.search-form img {
+  max-width: 300px;
+  height: 100px;
+}
+
+.form-title {
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: -0.015rem;
+}
+
+.form-description {
+  color: var(--clr-grey-7);
+  font-size: 0.85rem;
+  letter-spacing: initial;
+}
+
+.form-control {
+  width: 100%;
+}
+::-webkit-input-placeholder {
+  text-align: center;
+  color: var(--clr-grey-8);
+}
+.form-control input {
+  padding: 0.3em 1em;
+  font-family: inherit;
+  font-size: 1rem;
+  border: none;
+
+  background-color: transparent;
+  width: 80%;
+  max-width: 400px;
+  display: block;
+  margin: 0 auto;
+
+  border-bottom: 1px solid grey;
+}
+@media screen and (min-width: 800px) {
+  .search-form img {
+    height: 150px;
+  }
+
+  .form-title {
+    font-size: 2.5rem;
+    /* letter-spacing: -0.02rem; */
+  }
+  .form-description {
+    font-size: 1.5rem;
+  }
+
+  .form-control input {
+    font-size: 1.3rem;
   }
 }
