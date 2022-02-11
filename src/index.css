@@ -267,3 +267,33 @@ p {
     font-size: 1.3rem;
   }
 }
+
+/* ---------------------country list----------------------- */
+.countries-container {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+
+  grid-gap: 2rem 1rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.country-img-container {
+  /* display: inline-block; */
+}
+
+.country-img-container img {
+  width: 100%;
+}
+
+.country-name {
+  text-align: center;
+  font-weight: 700;
+}
+
+@media screen and (min-width: 800px) {
+  .countries-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
