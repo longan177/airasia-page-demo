@@ -10,7 +10,7 @@ function Navbar() {
           <img src="/airasia-logo.svg" />
           <span>AirAsia</span>
         </div>
-        <FontAwesomeIcon size="2x" className="fa-bars" icon={faBars} />
+        <FontAwesomeIcon size="2x" className="fa-loves" icon={faBars} />
         <ul className="nav-links">
           <li>Home</li>
           <li>About</li>

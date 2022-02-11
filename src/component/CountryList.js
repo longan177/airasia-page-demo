@@ -1,3 +1,5 @@
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faHeart, faUser } from "@fortawesome/free-solid-svg-icons";
 import React from "react";
 import { countries } from "./data";
 
@@ -18,9 +20,13 @@ export default CountryList;
 
 function Country({ name, url }) {
   return (
-    <div className="country-img-container">
+    <a href="#" className="country-img-container">
       <img className="country-img" src={url} alt="aze"></img>
       <div className="country-name">{name}</div>
-    </div>
+
+      <div className="icon__overlay">
+        <FontAwesomeIcon size="1x" className="fa-loves" icon={faHeart} />
+      </div>
+    </a>
   );
 }
