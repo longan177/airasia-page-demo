@@ -44,3 +44,12 @@ export const countries = [
     url: dbUrl("Nepal"),
   },
 ];
+
+export const message = [
+  "Choose at least one to continue",
+  "Great!",
+  "That's cool!😎",
+  "Awesome!! 👌",
+  "Keep going! 👍",
+  "Good pick! 😍",
+];

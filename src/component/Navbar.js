@@ -15,7 +15,7 @@ function Navbar() {
           <li>Home</li>
           <li>About</li>
           <li>
-            <FontAwesomeIcon className="fa-icons" icon={faUser} size="" /> Login
+            <FontAwesomeIcon className="fa-icons" icon={faUser} /> Login
           </li>
         </ul>
       </div>

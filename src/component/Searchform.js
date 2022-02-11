@@ -1,6 +1,10 @@
 import React from "react";
+import { useUserContext } from "../context";
+import { message } from "./data";
 
 function Searchform() {
+  const { messageRender } = useUserContext();
+
   return (
     <section className="search-form fixed-container">
       <div className="form-logo">
@@ -8,7 +12,7 @@ function Searchform() {
       </div>
 
       <h2 className="form-title">Whats'on your bucket list?</h2>
-      <h3 className="form-description">Choose at least one to continue</h3>
+      <h3 className="form-description">{messageRender}</h3>
 
       <form className="form-control">
         <input
