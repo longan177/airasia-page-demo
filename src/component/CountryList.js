@@ -1,15 +1,15 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import React, { useState } from "react";
-import { countries } from "./data";
+
 import { useUserContext } from "../context";
 
 function CountryList() {
-  const { selectedList } = useUserContext();
+  const { countriesList } = useUserContext();
   return (
     <div className="country-container fixed-container">
       <div className="countries-container">
-        {countries.map((country) => {
+        {countriesList.map((country) => {
           return <Country key={country.id} {...country} />;
         })}
       </div>

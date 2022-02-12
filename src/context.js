@@ -1,5 +1,6 @@
 import React, { useContext, useState, useEffect } from "react";
 import { message } from "./component/data";
+import { countries } from "./component/data";
 
 const UserContext = React.createContext();
 export const useUserContext = () => {
@@ -19,6 +20,7 @@ export default function UsersProvider({ children }) {
   const [prev, setPrev] = useState(1);
   const [messageRender, setMessageRender] = useState(message[0]);
   const [selectedList, setSelectedList] = useState([]);
+  const [countriesList, setCountriesList] = useState(countries);
 
   const generateMsg = () => {
     let rand = getNewRand(prev);
@@ -33,6 +35,12 @@ export default function UsersProvider({ children }) {
     generateMsg();
   }, [selectedList.length]);
 
-  const value = { messageRender, generateMsg, selectedList, setSelectedList };
+  const value = {
+    messageRender,
+    generateMsg,
+    selectedList,
+    setSelectedList,
+    countriesList,
+  };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }
