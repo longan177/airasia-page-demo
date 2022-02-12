@@ -558,6 +558,18 @@ footer {
   max-width: 400px;
   z-index: 3;
 }
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sidebar-header img {
+  width: 180px;
+}
+.fa-close {
+  display: block;
+  margin-right: 2rem;
+}
 
 .sidebar__content__show {
   transform: translateX(0);
@@ -566,11 +578,7 @@ footer {
 .sidebar-container {
   height: 100%;
   border: 1px solid red;
-  padding: 2rem;
-}
-.fa-close {
-  display: block;
-  margin-left: auto;
+  /* padding: 2rem; */
 }
 .nav-links-sidebar {
   text-align: center;

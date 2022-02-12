@@ -46,7 +46,7 @@ function Country({ name, url }) {
           selectedList.includes(name) ? "selected" : "hover-active"
         } `}
         src={url}
-        alt="aze"
+        alt={name}
       ></img>
       <div className="country-name">{name}</div>
 

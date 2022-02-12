@@ -18,12 +18,15 @@ function Sidebar() {
         } `}
       >
         <div className="sidebar-container">
-          <FontAwesomeIcon
-            onClick={() => setIsSidebarActive(false)}
-            className="fa-close"
-            size="3x"
-            icon={faClose}
-          />
+          <div className="sidebar-header">
+            <img src="/AirAsia_logo.svg" alt="logo" />
+            <FontAwesomeIcon
+              onClick={() => setIsSidebarActive(false)}
+              className="fa-close"
+              size="3x"
+              icon={faClose}
+            />
+          </div>
           <ul className="nav-links-sidebar">
             <li>Home</li>
             <li>About</li>
