@@ -1,6 +1,7 @@
-import React, { useContext, useState, useEffect } from "react";
-import { message } from "./component/data";
 import { countries } from "./component/data";
+import { message } from "./component/data";
+import React, { useContext, useState, useEffect, useRef } from "react";
+import { useUpdateEffect } from "react-use";
 
 const UserContext = React.createContext();
 export const useUserContext = () => {
@@ -22,9 +23,11 @@ export default function UsersProvider({ children }) {
   const [selectedList, setSelectedList] = useState([]);
   const [countriesList, setCountriesList] = useState(countries);
   const [userInput, setUserInput] = useState(``);
+  const [isCancel, setisCancel] = useState(false);
 
   const generateMsg = () => {
     let rand = getNewRand(prev);
+
     if (selectedList.length === 0) {
       return setMessageRender(message[0]);
     }
@@ -33,6 +36,9 @@ export default function UsersProvider({ children }) {
   };
 
   useEffect(() => {
+    if (isCancel && selectedList.length > 0) {
+      return setMessageRender("It's okay, keep going! 👍");
+    }
     generateMsg();
   }, [selectedList.length]);
 
@@ -57,6 +63,8 @@ export default function UsersProvider({ children }) {
     countriesList,
     userInput,
     setUserInput,
+    setMessageRender,
+    setisCancel,
   };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }

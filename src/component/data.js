@@ -50,6 +50,6 @@ export const message = [
   "Great!",
   "That's cool!😎",
   "Awesome!! 👌",
-  "Keep going! 👍",
+  "NICE!😍💕",
   "Good pick! 😍",
 ];

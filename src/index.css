@@ -42,7 +42,6 @@ Variables
   --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
   --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   --max-width: 1170px;
-  --fixed-width: 620px;
 }
 /*
 =============== 
@@ -121,6 +120,7 @@ p {
 }
 /*  global classes */
 
+/* -------------------------😍😍😍project class😍😍😍😍------------------------- */
 .navbar {
   background-color: #fff;
   box-shadow: 0 0 4px -2px var(--clr-grey-3);
@@ -399,11 +399,26 @@ footer {
   padding: 0.65em 0;
   z-index: 2;
   /* height: 2rem; */
-  /* display: flex;
-  justify-content: center;
-  align-items: center; */
 }
 
+.footer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.disclaimer {
+  display: none;
+}
+
+@media screen and (min-width: 600px) {
+  .disclaimer {
+    display: block;
+  }
+  .footer-container {
+    justify-content: space-between;
+  }
+}
 .btn-cont {
   border: none;
   background-color: var(--clr-grey-9);

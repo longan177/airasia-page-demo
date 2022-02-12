@@ -21,12 +21,15 @@ export default CountryList;
 
 function Country({ name, url }) {
   const [selected, setSelected] = useState(false);
-  const { generateMsg, setSelectedList, selectedList } = useUserContext();
+  const { setisCancel, setSelectedList, selectedList } = useUserContext();
   const handleClick = (name, e) => {
     if (selectedList.includes(name)) {
       setSelectedList(selectedList.filter((n) => n !== name));
+
+      setisCancel(true);
     } else {
       setSelectedList([...selectedList, name]);
+      setisCancel(false);
     }
 
     setSelected(!selected);

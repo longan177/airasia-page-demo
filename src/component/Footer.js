@@ -8,8 +8,10 @@ function Footer() {
   return (
     <footer>
       <div className="fixed-container footer-container">
+        <div className="disclaimer">Created by Wei Loong&#169;2022</div>
         <Link to="/thanks">
           <button
+            disabled={selectedList.length === 0}
             className={`btn-cont ${selectedList.length !== 0 && "btn-active"} `}
           >
             Continue{" "}
