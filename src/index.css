@@ -11,6 +11,7 @@ Variables
   --clr-primary-3: hsl(0, 98%, 29%);
 
   /* lighter shades of primary color */
+  --clr-primary-4: hsl(205, 90%, 60%);
   --clr-primary-5: hsl(205, 92%, 72%);
   --clr-primary-6: hsl(205, 89%, 70%);
   --clr-primary-7: hsl(205, 90%, 76%);
@@ -215,7 +216,7 @@ p {
   gap: 0.5rem;
   /* background-color: green; */
 }
-.search-form img {
+.form-logo img {
   max-width: 300px;
   height: 100px;
 }
@@ -411,8 +412,8 @@ footer {
 }
 
 .btn-active:hover {
-  background-color: var(--clr-primary-5);
-  color: var(--clr-grey-2);
+  background-color: var(--clr-primary-4);
+  color: var(--clr-grey-9);
 }
 
 @media screen and (min-width: 800px) {
@@ -427,3 +428,35 @@ footer {
 }
 
 /*--------------------- footer----------------------------- */
+
+/* /-------------------thank you page--------------------------- */
+.appreciation-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.appreciation-msg1 {
+  font-size: 0.85rem;
+  margin-bottom: 0.67rem;
+}
+.appreciation-msg2 {
+  font-size: 1.5rem;
+  text-align: center;
+  color: #000;
+  font-weight: bold;
+  letter-spacing: -0.075rem;
+  margin-bottom: 0.85rem;
+}
+
+@media screen and (min-width: 600px) {
+  .appreciation-msg1 {
+    font-size: 1.25rem;
+  }
+
+  .appreciation-msg2 {
+    font-size: 2rem;
+  }
+}
+/* /-------------------thank you page--------------------------- */

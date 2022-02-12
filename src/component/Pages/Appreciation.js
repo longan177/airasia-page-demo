@@ -1,7 +1,12 @@
 import React from "react";
+import Thankyou from "../Thankyou";
 
 function Appreciation() {
-  return <div>Thanks</div>;
+  return (
+    <main>
+      <Thankyou />
+    </main>
+  );
 }
 
 export default Appreciation;
