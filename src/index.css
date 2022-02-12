@@ -462,11 +462,7 @@ footer {
   gap: 0.85rem;
   transition: var(--transition);
 }
-.btn-cont::after {
-  font-family: "Font Awesome 5 Free";
-  font-weight: 900;
-  content: "\f007";
-}
+
 .btn-cont .fa-arrow {
   color: white;
   font-size: 20px;
