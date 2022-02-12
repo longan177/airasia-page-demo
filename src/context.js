@@ -24,6 +24,7 @@ export default function UsersProvider({ children }) {
   const [countriesList, setCountriesList] = useState(countries);
   const [userInput, setUserInput] = useState(``);
   const [isCancel, setisCancel] = useState(false);
+  const [isSidebarActive, setIsSidebarActive] = useState(false);
 
   const generateMsg = () => {
     let rand = getNewRand(prev);
@@ -65,6 +66,8 @@ export default function UsersProvider({ children }) {
     setUserInput,
     setMessageRender,
     setisCancel,
+    isSidebarActive,
+    setIsSidebarActive,
   };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }

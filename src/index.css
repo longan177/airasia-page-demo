@@ -124,6 +124,8 @@ p {
 .navbar {
   background-color: #fff;
   box-shadow: 0 0 4px -2px var(--clr-grey-3);
+  position: relative;
+  z-index: 1;
 }
 
 .fixed-container {
@@ -195,6 +197,12 @@ p {
 
 .fa-bars {
   display: block;
+  transition: var(--transition);
+  color: var(--clr-primary-2);
+}
+
+.fa-bars-rotate {
+  transform: rotate(90deg);
 }
 @media screen and (min-width: 600px) {
   .navbar ul {
@@ -497,3 +505,59 @@ footer {
   }
 }
 /* /-------------------thank you page--------------------------- */
+
+/* /-------------------sidebar--------------------------- */
+
+.sidebar__overlay {
+  background-color: hsla(0, 0%, 0%, 0.4);
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  height: 100%;
+  display: none;
+}
+
+.sidebar__overlay__show {
+  display: block;
+}
+
+.sidebar__content {
+  width: 80%;
+  background-color: #fff;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  transform: translateX(-100%);
+  transition: all 0.15s linear;
+  max-width: 400px;
+  z-index: 3;
+}
+
+.sidebar__content__show {
+  transform: translateX(0);
+}
+
+.sidebar-container {
+  height: 100%;
+  border: 1px solid red;
+  padding: 2rem;
+}
+.fa-close {
+  display: block;
+  margin-left: auto;
+}
+.nav-links-sidebar {
+  text-align: center;
+  margin-top: 4rem;
+}
+.nav-links-sidebar li {
+  font-size: 2.5rem;
+  margin-top: 1.5rem;
+  font-weight: bold;
+  font-family: inherit;
+}
+
+/* /-------------------sidebar--------------------------- */
