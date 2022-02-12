@@ -39,13 +39,19 @@ function Country({ name, url }) {
       className="country-img-container"
     >
       <img
-        className={`${selected ? "selected" : "hover-active"} `}
+        className={`${
+          selectedList.includes(name) ? "selected" : "hover-active"
+        } `}
         src={url}
         alt="aze"
       ></img>
       <div className="country-name">{name}</div>
 
-      <div className={`icon__overlay   ${selected && "icon__overlay-active"} `}>
+      <div
+        className={`icon__overlay   ${
+          selectedList.includes(name) && "icon__overlay-active"
+        } `}
+      >
         <FontAwesomeIcon size="1x" className="fa-loves" icon={faHeart} />
       </div>
     </div>

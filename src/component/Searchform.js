@@ -2,7 +2,8 @@ import React from "react";
 import { useUserContext } from "../context";
 
 function Searchform() {
-  const { messageRender, userInput, setUserInput } = useUserContext();
+  const { messageRender, userInput, setUserInput, selectedList } =
+    useUserContext();
 
   return (
     <section className="search-form fixed-container">
@@ -11,6 +12,7 @@ function Searchform() {
       </div>
 
       <h2 className="form-title">Whats'on your bucket list?</h2>
+      <h2 className="form-title">{selectedList}</h2>
       <h3 className="form-description">{messageRender}</h3>
 
       <form className="form-control">
