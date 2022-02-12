@@ -5,6 +5,7 @@ import { countries } from "./data";
 import { useUserContext } from "../context";
 
 function CountryList() {
+  const { selectedList } = useUserContext();
   return (
     <div className="country-container fixed-container">
       <div className="countries-container">
@@ -20,11 +21,17 @@ export default CountryList;
 
 function Country({ name, url }) {
   const [selected, setSelected] = useState(false);
-  const { generateMsg } = useUserContext();
+  const { generateMsg, setSelectedList, selectedList } = useUserContext();
   const handleClick = (name) => {
-    generateMsg();
+    if (selectedList.includes(name)) {
+      setSelectedList(selectedList.filter((n) => n !== name));
+    } else {
+      setSelectedList([...selectedList, name]);
+    }
+
     setSelected(!selected);
   };
+
   return (
     <div
       onClick={() => handleClick(name)}

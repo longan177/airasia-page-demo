@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { message } from "./component/data";
 
 const UserContext = React.createContext();
@@ -14,17 +14,25 @@ function getNewRand(oldRand = 0, min = 1, max = message.length - 1) {
     }
   }
 }
+
 export default function UsersProvider({ children }) {
-  const [prev, setPrev] = useState(null);
+  const [prev, setPrev] = useState(1);
   const [messageRender, setMessageRender] = useState(message[0]);
+  const [selectedList, setSelectedList] = useState([]);
 
   const generateMsg = () => {
     let rand = getNewRand(prev);
-
+    if (selectedList.length === 0) {
+      return setMessageRender(message[0]);
+    }
     setPrev(rand);
     setMessageRender(message[prev]);
   };
 
-  const value = { messageRender, generateMsg };
+  useEffect(() => {
+    generateMsg();
+  }, [selectedList.length]);
+
+  const value = { messageRender, generateMsg, selectedList, setSelectedList };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }
