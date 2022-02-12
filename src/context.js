@@ -1,7 +1,6 @@
 import { countries } from "./component/data";
 import { message } from "./component/data";
 import React, { useContext, useState, useEffect, useRef } from "react";
-import { useUpdateEffect } from "react-use";
 
 const UserContext = React.createContext();
 export const useUserContext = () => {
@@ -24,7 +23,17 @@ export default function UsersProvider({ children }) {
   const [countriesList, setCountriesList] = useState(countries);
   const [userInput, setUserInput] = useState(``);
   const [isCancel, setisCancel] = useState(false);
-  const [isSidebarActive, setIsSidebarActive] = useState(false);
+  const [isSidebarActive, setIsSidebarActive] = useState(null);
+
+  useEffect(() => {
+    const html = document.querySelector("html");
+    if (isSidebarActive) {
+      // To prevent scrolling when overlay is opened
+      html.classList.add("lock-scroll");
+    } else {
+      html.classList.remove("lock-scroll");
+    }
+  }, [isSidebarActive]);
 
   const generateMsg = () => {
     let rand = getNewRand(prev);

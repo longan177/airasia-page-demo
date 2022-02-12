@@ -524,6 +524,11 @@ footer {
   display: block;
 }
 
+/* To prevent scrolling when overlay is opened */
+.lock-scroll {
+  overflow: hidden;
+}
+
 .sidebar__content {
   width: 80%;
   background-color: #fff;
