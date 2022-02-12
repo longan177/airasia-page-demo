@@ -207,7 +207,9 @@ p {
 }
 
 /* ------------------main------------------------ */
-
+main {
+  padding-bottom: 5rem;
+}
 .search-form {
   display: flex;
   flex-direction: column;
