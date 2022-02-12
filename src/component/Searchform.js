@@ -12,7 +12,7 @@ function Searchform() {
       </div>
 
       <h2 className="form-title">Whats'on your bucket list?</h2>
-      <h2 className="form-title">{selectedList}</h2>
+
       <h3 className="form-description">{messageRender}</h3>
 
       <form className="form-control">

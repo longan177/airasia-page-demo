@@ -11,6 +11,7 @@ Variables
   --clr-primary-3: hsl(0, 98%, 29%);
 
   /* lighter shades of primary color */
+  --clr-primary-5: hsl(205, 92%, 72%);
   --clr-primary-6: hsl(205, 89%, 70%);
   --clr-primary-7: hsl(205, 90%, 76%);
   --clr-primary-8: hsl(205, 86%, 81%);
@@ -191,6 +192,7 @@ p {
 }
 
 .fa-bars {
+  display: block;
 }
 @media screen and (min-width: 600px) {
   .navbar ul {
@@ -290,8 +292,8 @@ p {
 }
 .icon__overlay {
   position: absolute;
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   background-color: red;
   border-radius: 60%;
   z-index: 2;
@@ -305,15 +307,16 @@ p {
 
 .fa-loves {
   color: white;
-  font-size: 20px;
+  font-size: 15px;
 }
 
 .country-name {
   text-align: center;
   font-weight: 700;
 }
-.hover-active {
-  transition: all 0.05s linear;
+.hover-active,
+.selected {
+  transition: all 0.085s linear;
 }
 
 .country-img-container:hover {
@@ -334,14 +337,92 @@ p {
 }
 
 .selected {
-  outline: 10px solid var(--clr-primary-1);
-  outline-offset: -10px;
+  outline: 8px solid var(--clr-primary-1);
+  outline-offset: -8px;
   border-radius: 25px;
 }
 @media screen and (min-width: 800px) {
   .countries-container {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
+
+  .selected {
+    outline: 10px solid var(--clr-primary-1);
+    outline-offset: -10px;
+  }
+
+  .fa-loves {
+    color: white;
+    font-size: 20px;
+  }
+  .icon__overlay {
+    height: 50px;
+    width: 50px;
+  }
 }
 
 /* ---------------------country list----------------------- */
+
+/*--------------------- footer----------------------------- */
+
+footer {
+  background-color: #fff;
+  box-shadow: 0 0 5px -2px var(--clr-grey-3);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  padding: 0.65em 0;
+  z-index: 2;
+  /* height: 2rem; */
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+}
+
+.btn-cont {
+  border: none;
+  background-color: var(--clr-grey-9);
+  color: var(--clr-grey-5);
+  cursor: not-allowed;
+  padding: 1em 3em;
+  font-size: 0.85rem;
+  font-family: inherit;
+  border-radius: 35px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  gap: 0.85rem;
+  transition: var(--transition);
+}
+
+.btn-cont .fa-arrow {
+  color: white;
+  font-size: 20px;
+}
+
+.btn-active {
+  cursor: pointer;
+  background-color: var(--clr-primary-7);
+  color: var(--clr-grey-1);
+}
+
+.btn-active:hover {
+  background-color: var(--clr-primary-5);
+  color: var(--clr-grey-2);
+}
+
+@media screen and (min-width: 800px) {
+  .btn-cont .fa-arrow {
+    color: white;
+    font-size: 25px;
+  }
+
+  .btn-cont {
+    font-size: 1rem;
+  }
+}
+
+/*--------------------- footer----------------------------- */
