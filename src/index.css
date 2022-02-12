@@ -326,20 +326,24 @@ main {
 .country-img-container:hover {
   cursor: pointer;
 }
-.country-img-container:hover .icon__overlay {
-  display: flex;
-}
+
 .icon__overlay-active {
   display: flex;
 }
 
-.country-img-container:hover .hover-active {
-  outline: 5px solid transparent;
-  outline-offset: -5px;
-  border-radius: 25px;
-  /* border-radius: 20px; */
-}
+/* To remove hover state appear in mobile mode */
+@media (hover: hover) {
+  .country-img-container:hover .icon__overlay {
+    display: flex;
+  }
 
+  .country-img-container:hover .hover-active {
+    outline: 5px solid transparent;
+    outline-offset: -5px;
+    border-radius: 25px;
+    /* border-radius: 20px; */
+  }
+}
 .selected {
   outline: 8px solid var(--clr-primary-1);
   outline-offset: -8px;

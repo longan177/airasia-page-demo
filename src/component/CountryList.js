@@ -22,7 +22,7 @@ export default CountryList;
 function Country({ name, url }) {
   const [selected, setSelected] = useState(false);
   const { generateMsg, setSelectedList, selectedList } = useUserContext();
-  const handleClick = (name) => {
+  const handleClick = (name, e) => {
     if (selectedList.includes(name)) {
       setSelectedList(selectedList.filter((n) => n !== name));
     } else {
@@ -34,7 +34,7 @@ function Country({ name, url }) {
 
   return (
     <div
-      onClick={() => handleClick(name)}
+      onClick={(e) => handleClick(name, e)}
       href="#"
       className="country-img-container"
     >
