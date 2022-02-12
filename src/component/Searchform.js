@@ -1,9 +1,8 @@
 import React from "react";
 import { useUserContext } from "../context";
-import { message } from "./data";
 
 function Searchform() {
-  const { messageRender } = useUserContext();
+  const { messageRender, userInput, setUserInput } = useUserContext();
 
   return (
     <section className="search-form fixed-container">
@@ -16,6 +15,8 @@ function Searchform() {
 
       <form className="form-control">
         <input
+          value={userInput}
+          onChange={(e) => setUserInput(e.target.value)}
           type="text"
           maxLength={30}
           placeholder="Search a country or region"

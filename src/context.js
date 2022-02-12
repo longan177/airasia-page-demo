@@ -21,6 +21,7 @@ export default function UsersProvider({ children }) {
   const [messageRender, setMessageRender] = useState(message[0]);
   const [selectedList, setSelectedList] = useState([]);
   const [countriesList, setCountriesList] = useState(countries);
+  const [userInput, setUserInput] = useState(``);
 
   const generateMsg = () => {
     let rand = getNewRand(prev);
@@ -35,12 +36,27 @@ export default function UsersProvider({ children }) {
     generateMsg();
   }, [selectedList.length]);
 
+  const filterByName = (country) => {
+    if (userInput === "") {
+      return country;
+    } else if (country.name.toLowerCase().includes(userInput.toLowerCase())) {
+      return country;
+    }
+  };
+
+  useEffect(() => {
+    const newList = countries.filter(filterByName);
+    setCountriesList(newList);
+  }, [userInput]);
+
   const value = {
     messageRender,
     generateMsg,
     selectedList,
     setSelectedList,
     countriesList,
+    userInput,
+    setUserInput,
   };
   return <UserContext.Provider value={value}>{children}</UserContext.Provider>;
 }
