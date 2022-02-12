@@ -304,9 +304,11 @@ main {
   top: 43%;
   left: 50%;
   transform: translate(-50%, -50%);
-  display: none;
+  display: flex;
   justify-content: center;
   align-items: center;
+  opacity: 0;
+  transition: opacity 0.25s linear;
 }
 
 .fa-loves {
@@ -329,12 +331,26 @@ main {
 
 .icon__overlay-active {
   display: flex;
+  opacity: 1;
+  animation: rotateIcon 0.2s linear;
 }
 
+@keyframes rotateIcon {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
 /* To remove hover state appear in mobile mode */
 @media (hover: hover) {
   .country-img-container:hover .icon__overlay {
     display: flex;
+    opacity: 1;
   }
 
   .country-img-container:hover .hover-active {
