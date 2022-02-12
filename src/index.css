@@ -167,6 +167,7 @@ p {
   position: relative;
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .navbar .fa-icons {
@@ -181,6 +182,7 @@ p {
   left: 50%;
   transform: translateX(-50%);
   bottom: -1rem;
+  transition: width 0.1s linear;
 }
 .navbar li:hover {
   color: var(--clr-primary-1);
@@ -188,7 +190,6 @@ p {
 
 .navbar li:hover:after {
   width: 100%;
-  transition: width 0.1s linear;
 }
 
 .fa-bars {

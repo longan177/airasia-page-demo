@@ -1,5 +1,6 @@
 import React from "react";
 import CountryList from "../CountryList";
+import Footer from "../Footer";
 import Searchform from "../Searchform";
 
 function Home() {
@@ -7,6 +8,7 @@ function Home() {
     <main>
       <Searchform />
       <CountryList />
+      <Footer />
     </main>
   );
 }
