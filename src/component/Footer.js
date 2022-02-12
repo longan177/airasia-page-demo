@@ -8,7 +8,15 @@ function Footer() {
   return (
     <footer>
       <div className="fixed-container footer-container">
-        <div className="disclaimer">Created by Wei Loong&#169;2022</div>
+        <div className="disclaimer">
+          Created by Wei Loong&#169;2022
+          <a
+            target="_blank"
+            href="https://github.com/longan177/airasia-page-demo"
+          >
+            <span>View Source Code </span>
+          </a>
+        </div>
         <Link to="/thanks">
           <button
             disabled={selectedList.length === 0}

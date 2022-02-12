@@ -2,8 +2,7 @@ import React from "react";
 import { useUserContext } from "../context";
 
 function Searchform() {
-  const { messageRender, userInput, setUserInput, selectedList } =
-    useUserContext();
+  const { messageRender, userInput, setUserInput } = useUserContext();
 
   return (
     <section className="search-form fixed-container">

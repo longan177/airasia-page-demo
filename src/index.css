@@ -418,10 +418,28 @@ footer {
 .disclaimer {
   display: none;
 }
+.disclaimer a {
+  text-decoration: none;
+  color: #000;
+  display: none;
+  transition: all 0.1s linear;
+}
+.disclaimer a:hover {
+  color: var(--clr-grey-4);
+}
+
+.disclaimer span {
+  margin-left: 1.5rem;
+  cursor: pointer;
+  font-weight: 500;
+}
 
 @media screen and (min-width: 600px) {
   .disclaimer {
     display: block;
+  }
+  .disclaimer a {
+    display: inline;
   }
   .footer-container {
     justify-content: space-between;
@@ -444,7 +462,11 @@ footer {
   gap: 0.85rem;
   transition: var(--transition);
 }
-
+.btn-cont::after {
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  content: "\f007";
+}
 .btn-cont .fa-arrow {
   color: white;
   font-size: 20px;
@@ -565,4 +587,11 @@ footer {
   font-family: inherit;
 }
 
+@media screen and (min-width: 600px) {
+  /* To prevent user zoom in and activate the layout and unable to close after zooming out. */
+  .sidebar__overlay__show,
+  .sidebar__content__show {
+    display: none;
+  }
+}
 /* /-------------------sidebar--------------------------- */

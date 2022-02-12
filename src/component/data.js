@@ -46,8 +46,8 @@ export const countries = [
 ];
 
 export const message = [
-  "Choose at least one to continue",
-  "Great!",
+  "Choose at least one to continue", //default message!
+  "Great!!❤️",
   "That's cool!😎",
   "Awesome!! 👌",
   "NICE!😍💕",

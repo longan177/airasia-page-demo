@@ -7,6 +7,8 @@ export const useUserContext = () => {
   return useContext(UserContext);
 };
 
+//To generate a random number between 1 and total amount of elements inside array.
+//Ensure that every generation is different from previous.
 function getNewRand(oldRand = 0, min = 1, max = message.length - 1) {
   while (true) {
     let newRand = Math.floor(Math.random() * (max - min + 1) + min);
@@ -38,6 +40,7 @@ export default function UsersProvider({ children }) {
   const generateMsg = () => {
     let rand = getNewRand(prev);
 
+    //To ensure default message is displayed when no countries is selected.
     if (selectedList.length === 0) {
       return setMessageRender(message[0]);
     }
@@ -45,6 +48,7 @@ export default function UsersProvider({ children }) {
     setMessageRender(message[prev]);
   };
 
+  //Ensure that another message is generated for everytime user deselect a country.
   useEffect(() => {
     if (isCancel && selectedList.length > 0) {
       return setMessageRender("It's okay, keep going! 👍");
@@ -52,6 +56,7 @@ export default function UsersProvider({ children }) {
     generateMsg();
   }, [selectedList.length]);
 
+  //Filtering the country from user input.
   const filterByName = (country) => {
     if (userInput === "") {
       return country;
