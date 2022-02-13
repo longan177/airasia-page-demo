@@ -315,7 +315,7 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  opacity: 0;
+
   transition: opacity 0.25s linear;
 }
 
@@ -339,7 +339,7 @@ main {
 
 .icon__overlay-active {
   display: flex;
-  opacity: 1;
+  opacity: 1 !important;
   animation: rotateIcon 0.2s linear;
 }
 
@@ -358,7 +358,7 @@ main {
 @media (hover: hover) {
   .country-img-container:hover .icon__overlay {
     display: flex;
-    opacity: 1;
+    opacity: 1 !important;
   }
 
   .country-img-container:hover .hover-active {

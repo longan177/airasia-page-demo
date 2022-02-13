@@ -51,6 +51,7 @@ function Country({ name, url }) {
       <div className="country-name">{name}</div>
 
       <div
+        style={{ opacity: 0 }}
         className={`icon__overlay   ${
           selectedList.includes(name) && "icon__overlay-active"
         } `}
