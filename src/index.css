@@ -460,7 +460,7 @@ footer {
   align-items: center;
   margin: 0 auto;
   gap: 0.85rem;
-  transition: var(--transition);
+  transition: background-color 0.3s linear, color 0.3s linear;
 }
 
 .btn-cont .fa-arrow {
