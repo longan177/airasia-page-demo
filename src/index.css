@@ -548,15 +548,15 @@ footer {
 }
 
 .sidebar__content {
-  width: 80%;
+  width: 0;
   background-color: #fff;
   height: 100%;
   position: fixed;
   top: 0;
-  transform: translateX(-100%);
-  transition: all 0.15s linear;
+  overflow: hidden;
   max-width: 400px;
   z-index: 3;
+  transition: all 0.15s linear;
 }
 .sidebar-header {
   display: flex;
@@ -572,12 +572,13 @@ footer {
 }
 
 .sidebar__content__show {
-  transform: translateX(0);
+  transition: all 0.15s linear;
+  width: 80%;
 }
 
 .sidebar-container {
   height: 100%;
-  border: 1px solid red;
+
   /* padding: 2rem; */
 }
 .nav-links-sidebar {
